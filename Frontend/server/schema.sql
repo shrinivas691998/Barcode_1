@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS barcode_db;
+USE barcode_db;
+
+CREATE TABLE IF NOT EXISTS persons (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  age INT NOT NULL,
+  dob DATE NOT NULL,
+  gender ENUM('male', 'female', 'other') NOT NULL,
+  barcode_data VARCHAR(255) UNIQUE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
